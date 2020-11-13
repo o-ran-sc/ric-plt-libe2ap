@@ -1,0 +1,9 @@
+# this file should contain ONLY a brief explaination of each change
+# pushed into the repo. Date, version and Jira issue ID should be
+# mentioned.  This file will be scraped to generate the RTD release
+# notes file, so format dictates that each change start with a
+# "year Month day" string. Please do NOT use rst text here!
+
+2020 November 13; Version 0.0.1
+	Initial commit of base files (RIC-683)
+
