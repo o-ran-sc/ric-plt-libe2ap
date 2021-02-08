@@ -25,8 +25,14 @@
 project( libe2ap )
 cmake_minimum_required( VERSION 3.5 )
 
-set( major_version "0" )		# should be automatically populated from git tag later, but until CI process sets a tag we use this
-set( minor_version "1" )
+#
+#	Versioning is based on the E2 specification version number in play when the generated
+#	code in src/e2ap was created.  The major/minor numbers should match the working group
+#	name (e.g.  ORAN-WG3.E2AP-v01.00, would be 1.0). The patch version can be increased for
+#	small tweaks and possibly corrections (omissions/inclusions etc.) as is needed.
+#
+set( major_version "1" )
+set( minor_version "0" )
 set( patch_level "0" )
 
 set( install_root "${CMAKE_INSTALL_PREFIX}" )
@@ -142,14 +148,13 @@ set ( srcd "${CMAKE_CURRENT_SOURCE_DIR}" )
 # but Cmake insists on having these exist when we add them to include directories to
 # enable code to find them after we build them.
 #
-#----- FIX ME -----
-# the source directories need to be explicitly added here; the line below is from the C++ framework as an example
-#include_directories( "${srcd}/src/messaging;${srcd}/src/json;${srcd}/src/alarm;${srcd}/src/metrics;${srcd}/src/config;${srcd}/ext/jsmn" )
+# the source directories need to be explicitly added here
+include_directories( "${srcd}/src/e2ap" )
 
 # Compiler flags
 #
 set( CMAKE_POSITION_INDEPENDENT_CODE ON )
-set( CMAKE_C_FLAGS "-g " )
+set( CMAKE_C_FLAGS "-g -DASN_DISABLE_OER_SUPPORT" )
 set( CMAKE_CPP_FLAGS "-g " )
 set( CMAKE_CXX_FLAGS "-g " )
 if( GPROF )					# if set, we'll set profiling flag on compiles
@@ -163,22 +168,22 @@ unset( GPROF CACHE )					# we don't want this to persist
 
 
 # --------------------- external building --------------------------------------------------------
-execute_process( COMMAND  git submodule update --init -- ext/jsmn
-                WORKING_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}
-        )
+# TESTING -- this likely can go, but until we are sure we don't have an external thing to pull/build
+# keep it as an example
+#execute_process( COMMAND  git submodule update --init -- ext/jsmn
+#                WORKING_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}
+#        )
 
 
 # --------------------------------building --------------------------------------------------------
 # Include modules
-# FIX ME ----- the sub directories need to be added here; are there others?
+#
 add_subdirectory( src/e2ap )
 
 # shared and static libraries are built from the same object files.
 #
-# --- FIX ME ---- asn1 objects are assumed to be all built in the same src directory and tagged together
-#                 as asn1_ojbects; are tehre others, or is the tag different?
-add_library( riclibe2ap SHARED
-	"$<TARGET_OBJECTS:asn1_objects>;"
+add_library(  riclibe2ap SHARED
+	"$<TARGET_OBJECTS:e2ap_objects>;"
 )
 set_target_properties( riclibe2ap
 	PROPERTIES
@@ -187,16 +192,12 @@ set_target_properties( riclibe2ap
 	VERSION ${major_version}.${minor_version}.${patch_level}
 )
 
-# --- FIX ME -------  is this target include needed?
-#target_include_directories( riclibe2ap PUBLIC "src/e2ap" )
-
 # we only build/export the static archive (.a) if generating a dev package
 if( DEV_PKG )
-	# --- FIX ME --- asn1 objects are assumed to be bundled; are there others?
-	add_library( riclibe2ap STATIC
-		"$<TARGET_OBJECTS:asn1_objects>;"
+	add_library( riclibe2ap_static STATIC
+		"$<TARGET_OBJECTS:e2ap_objects>;"
 	)
-	set_target_properties( riclibe2ap
+	set_target_properties( riclibe2ap_static
 		PROPERTIES
 		OUTPUT_NAME "riclibe2ap"
 		SOVERSION ${major_version}
@@ -222,7 +223,7 @@ endif()
 # the library (.so) files and nothing more.
 #
 if( DEV_PKG )
-	set( target_list "riclibe2ap" )
+	set( target_list "riclibe2ap_static" )
 else()
 	set( target_list "riclibe2ap" )
 endif()
