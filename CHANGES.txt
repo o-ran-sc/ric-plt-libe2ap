@@ -4,6 +4,22 @@
 # notes file, so format dictates that each change start with a
 # "year Month day" string. Please do NOT use rst text here!
 
+
+# This file is parsed by a document builder and the rel-notes.rst
+# file for the RTD site is generated. Changes must start with a date
+# and version string. Blank lines are used to separate items when a version
+# has several changes.  Multiple blank lines between versions are squished
+# to one.
+
+release = Dawn
+
+2021 8 February
+	Added CMake support for package generation. (RIC-684)
+
+
+release = Cherry
+
 2020 November 13; Version 0.0.1
 	Initial commit of base files (RIC-683)
 
+#release= Bronze

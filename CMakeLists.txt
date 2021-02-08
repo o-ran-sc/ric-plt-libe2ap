@@ -206,14 +206,15 @@ if( DEV_PKG )
 endif()
 
 # -------- unit testing -------------------------------------------------------
-# --- FIX ME ---- I don't think there are unit tests; code is generated, but the CI might
-#				require a test "entry point" which always returns good.
-#enable_testing()
-#add_test(
-#	NAME drive_unit_tests
-#	COMMAND bash ../test/unit_test.sh -q CMBUILD=${CMAKE_CURRENT_BINARY_DIR}
-#	WORKING_DIRECTORY ../test
-#)
+#	There are no real tests as the code is generated, but CI might need/want to
+#	be able to run 'make test'.  This allows for it.
+#
+enable_testing()
+add_test(
+	NAME drive_unit_tests
+	COMMAND bash ../test/unit_test.sh -q CMBUILD=${CMAKE_CURRENT_BINARY_DIR}
+	WORKING_DIRECTORY ../test
+)
 
 
 # ------------- packaging -----------------------------------------------------
