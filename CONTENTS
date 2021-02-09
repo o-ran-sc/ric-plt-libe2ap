@@ -1,0 +1,34 @@
+This directory contains files which may seem (and probably are)
+out of place in the root.  Mostly these are CI files which should
+really be placed into a CI directory, but must exist here else
+the CI mechanics fall over.  This is a list of these odd files.
+
+
+docs	-- This directory contains generated documentation that is
+	scraped and placed on an external documentation site. The directory
+	name must be exactly "doc" and the CI/doc jobs fail if there
+	are files in the directory which are not referenced by the
+	index.
+
+rmr-version.yaml  The CI vetting processes create environments
+	which include the RMR libraries. This file contains a single
+	definition of the desired RMR version to use in these
+	environments.  There should be no need for RMR in any of
+	the evironments used to vet this code, so the version here
+	just needs to reference something available.
+
+tox.ini -- It is unclear exactly what this is for given that
+	there is no python code associated with this repo. The only
+	guess is that the document scraper/verification CI job is
+	a python application and requires this.
+
+.readthedocs.yaml -- Another doc CI configuration bit of goop.
+
+releases -- This is a directory which contains a single yaml file
+	used to indicate to the CI jobs which library should be moved
+	from the package cloud staging repo to the release repo. See
+	the README in that directory for more details.
+
+
+The rest of the files, like .git* should be well known to developers
+and thus are not explained here.

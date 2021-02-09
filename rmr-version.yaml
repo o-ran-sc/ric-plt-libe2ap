@@ -1,0 +1,6 @@
+# Communicate to CI which version of RMR to install in the build/vet environment
+# there shouldn't be anything to depend on/use RMR in generating packages, so the
+# version here may lag without effect.
+#
+---
+version: 4.5.2

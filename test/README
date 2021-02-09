@@ -1,0 +1,6 @@
+
+There are no unit tests for the generated code.
+
+Driving unit tests is a part of teh CI process, so it is assumed
+that a dummy script in this directory is needed such that it can
+be run during some CI process.

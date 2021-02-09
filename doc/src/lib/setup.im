@@ -1,0 +1,132 @@
+.if false
+==================================================================================
+    Copyright (c) 2020 Nokia
+    Copyright (c) 2020 AT&T Intellectual Property.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+==================================================================================
+.fi
+
+.if false
+    Mnemonic:   setup.im
+    Abstract:   Provide general setup for all documents. It will include the
+				{X}fm common macro definitions (cmd) which provide the ability
+				to generate markdown, roff, and RST "source" from {X}fm source
+				while still allowing postscript to be generated.
+
+				Visit gitlab.com/rouxware/xfm for info on how to bulid
+				{X}fm if needed.
+
+    Date:       29 July 2019
+.fi
+
+
+.if ! _setup_im
+	.dv _setup_im 1
+
+	.** our imbeds live here
+	.dv lib ../lib
+
+	.** sane default for everything except rst
+	.dv col_width 6.5i
+	.dv textsize 10
+	.dv textfont Helvetica
+	.dv boldfont Helvetica-Bold
+	.hn off
+	.tm .75i
+
+	.**  imbed output type specific macro file
+	.gv e OUTPUT_TYPE ot
+	.dv output_type &{ot!txt}
+
+
+	.** {X}fm package provided common macro definitions
+	.im cmd_master.im
+
+	.** because of the current RTD "template" we MUST force double spaceing
+	.** in definition lists else the bloody thing runs them all onto one line.
+	.** the following will do this and is harmless for other output types.
+	&force_diterm_breaks
+
+	.gv e XFM_PASS pass
+	.dv pass &{pass!1}
+
+
+	.** check that current version of {X}fm is greater/equal to our minimum req'd
+	.if ! [ "2.3.2" CVGE ]
+		.gv
+		.mg ### WARN ###  this document source expects {X}fm version 2.3.2 or greater; found &{_major}.&{_minor}.&_patch
+	.fi
+
+	.gv e XFM_PATH xpath
+	.if ! xpath
+		.gv e TFM_PATH xpath
+		.if ! xpath
+			.mg ### WARNING ###  XFM_PATH should be set to reference the shared imbed files; likely these are in /usr/local/share/xfm
+		.fi
+	.fi
+
+	.** forward variable reference support
+	.** define a 'subroutine' to add a variable and place it into the forward reference file
+	.** fref_sub.ca contains code to execute by the set_fref macor and fref.ca contains the
+	.** forward references to include during pass2. The macro set_ref will define the variable
+	.** passed as $1 (name) with the value passed as $2 and will add it to the fref.ca file.
+	.**
+	.ca shift start _fref_sub.ca
+		.** be careful... the next  'ca end' MUST be tab indented before {X} version 2.4.
+		.** with 2.4 and after it can be space indented
+
+		.ca expand extend _fref.ca
+		.dv &vname &vval
+		.ca end
+.ca end
+.** the previous 'ca end' MUST be in col 0
+	.dv export_var .dv vname $1 ^: .dv vval $2 ^: .dv $1 $2 ^: .im _fref_sub.ca
+	.dv export_fig  .dv vname $1 ^: .gv fig .ev ^`.dv vval ^^&_fig ^: ^`  .im _fref_sub.ca
+	.dv export_tab  .dv vname $1 ^: .gv table .ev ^`.dv vval ^^&_table ^` ^: .im _fref_sub.ca
+	.dv export_pg  .dv vname $1 ^: .gv page .ev ^`.dv vval ^^&_page ^` ^: .im _fref_sub.ca
+
+
+	.if &pass 2 =
+		.im _fref.ca
+	.ei
+		.** initialise the forward ref file
+		.ca start _fref.ca
+			.** forward reference variables; auto generated
+.ca end
+	.fi
+
+
+	.** set up for an index when using pfm and snare file is defined
+	.if pfm
+		.** {X}fm macro definitions are too big
+		.dh 1 p=14 s=2,1 e=off
+		.dh 2 p=12 s=1,.5
+		.dh 3 p=&{textsize!10} s=1,0
+
+		.if index_snare_file
+			.ix space .sp 1 .cc 5 %c .ln  ^: .sp 0
+			.ix term .br %s  `^`   ^`` %d
+			.ix groupb .sp .5 %s .br .ll -.25i .in +.25i
+			.ix groupe .sp .1 .in -.25i .ll +.25i
+			.if ! index_cols
+				.dv index_cols 2
+			.fi
+
+			.dv index_col_width [ 6.5 &index_cols / .25 &index_cols 1 - * - ]
+			.dv index_here  .pa .ju off .st &textsize .cd 1 i=1i w=7 ^: .h1 INDEX ^: .pn off .lw 0 .sp 0 .tt ^: .cd &index_cols i=1i w=&{index_col_width}i  g=.25i ^: .in -i .ll &{index_col_width}i .ix insert
+			.im &index_snare_file
+		.fi
+	.fi
+
+.fi
