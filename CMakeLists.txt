@@ -31,8 +31,8 @@ cmake_minimum_required( VERSION 3.5 )
 #	name (e.g.  ORAN-WG3.E2AP-v01.00, would be 1.0). The patch version can be increased for
 #	small tweaks and possibly corrections (omissions/inclusions etc.) as is needed.
 #
-set( major_version "0" )
-set( minor_version "1" )
+set( major_version "1" )
+set( minor_version "0" )
 set( patch_level "0" )
 
 set( install_root "${CMAKE_INSTALL_PREFIX}" )
