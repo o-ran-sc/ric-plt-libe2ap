@@ -1,0 +1,11 @@
+---
+package_name: riclibe2ap
+log_dir: ric-plt-libe2ap-dev-cmake-packagecloud-stage-master/2
+ref: b4d2184f3649be6dffe35102f8ffde0d5c588237
+version: 1.0.0
+packages:
+    - name: riclibe2ap-1.0.0-1.x86_64.rpm
+    - name: riclibe2ap-devel-1.0.0-1.x86_64.rpm
+    - name: riclibe2ap_1.0.0_amd64.deb
+    - name: riclibe2ap-dev_1.0.0_amd64.deb
+
