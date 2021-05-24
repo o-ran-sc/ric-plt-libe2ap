@@ -149,7 +149,7 @@ set ( srcd "${CMAKE_CURRENT_SOURCE_DIR}" )
 # enable code to find them after we build them.
 #
 # the source directories need to be explicitly added here
-include_directories( "${srcd}/src/e2ap" )
+include_directories( "${srcd}/src/e2ap" "${srcd}/src/wrapper")
 
 # Compiler flags
 #
@@ -179,11 +179,12 @@ unset( GPROF CACHE )					# we don't want this to persist
 # Include modules
 #
 add_subdirectory( src/e2ap )
+add_subdirectory( src/wrapper )
 
 # shared and static libraries are built from the same object files.
 #
 add_library(  riclibe2ap SHARED
-	"$<TARGET_OBJECTS:e2ap_objects>;"
+	"$<TARGET_OBJECTS:e2ap_objects>;$<TARGET_OBJECTS:wrapper_objects>;"
 )
 set_target_properties( riclibe2ap
 	PROPERTIES
@@ -195,7 +196,7 @@ set_target_properties( riclibe2ap
 # we only build/export the static archive (.a) if generating a dev package
 if( DEV_PKG )
 	add_library( riclibe2ap_static STATIC
-		"$<TARGET_OBJECTS:e2ap_objects>;"
+		"$<TARGET_OBJECTS:e2ap_objects>;$<TARGET_OBJECTS:wrapper_objects>;"
 	)
 	set_target_properties( riclibe2ap_static
 		PROPERTIES

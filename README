@@ -1,4 +1,0 @@
-
-This repo contains code that is generated from ASN1 descriptions
-as well as CMake bits that allow it to be used as a submodule
-to other projects.
