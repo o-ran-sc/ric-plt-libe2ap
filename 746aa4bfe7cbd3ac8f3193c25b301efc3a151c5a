@@ -33,6 +33,24 @@
       "message": "note we have rule RC-4 as per https://wiki.o-ran-sc.org/display/RICP/Release+criteria+checklist+template \n\n\"All L or XL commits of the last two weeks have also new unit tests. This is our policy.\"",
       "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2a8d391_7b86f0f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000475
+      },
+      "writtenOn": "2021-05-25T14:52:19Z",
+      "side": 1,
+      "message": "Hello Thoralf,\nthank you for reviewing this patch.\nAs per our discussion, to proceed for this patch I have captured UT requirement in RIC-792 (https://jira.o-ran-sc.org/browse/RIC-792). UT requirement we will identify and complete in E release.",
+      "parentUuid": "b1858817_e34e38e6",
+      "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
