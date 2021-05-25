@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13249fa4_1faa0be6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2021-05-25T07:14:40Z",
+      "side": 1,
+      "message": "Build and check of normal operation have been completed.",
+      "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
