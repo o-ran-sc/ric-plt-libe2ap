@@ -16,6 +16,23 @@
       "message": "Build and check of normal operation have been completed.",
       "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1858817_e34e38e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2021-05-25T09:02:01Z",
+      "side": 1,
+      "message": "note we have rule RC-4 as per https://wiki.o-ran-sc.org/display/RICP/Release+criteria+checklist+template \n\n\"All L or XL commits of the last two weeks have also new unit tests. This is our policy.\"",
+      "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
