@@ -1,0 +1,10 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Heewon Park <h_w.park@samsung.com>
+Code-Review-1: Thoralf Czichy <thoralf.czichy@nokia.com>
+Code-Review+1: Oskari Ruotsalainen <oskari.ruotsalainen@nokia.com>
+Code-Review+2: Anssi Mannila <anssi.mannila@nokia.com>
+Submitted-by: Anssi Mannila <anssi.mannila@nokia.com>
+Submitted-at: Tue, 01 Jun 2021 17:43:48 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ric-plt/libe2ap/+/6131
+Project: ric-plt/libe2ap
+Branch: refs/heads/master
