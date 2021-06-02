@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcf06946_4f2a0742",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000475
+      },
+      "writtenOn": "2021-06-02T08:56:12Z",
+      "side": 1,
+      "message": "Please review this patch is created to move artifact to release area of package cloud (https://wiki.o-ran-sc.org/display/ORAN/O-RAN+Developer%27s+Guide+to+CI+Resources+and+Processes+at+the+LF#ORANDeveloper\u0027sGuidetoCIResourcesandProcessesattheLF-ReleasingaPackageCloudDEB/RPMpackage).",
+      "revId": "f150fdb3dd404799a1ca4dfc8788f138f2bd69ff",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
