@@ -68,6 +68,23 @@
       "message": "Patch Set 2: stage-release",
       "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8dd6e9d_ca20726c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000475
+      },
+      "writtenOn": "2021-06-02T05:49:04Z",
+      "side": 1,
+      "message": "Patch Set 2: remerge",
+      "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
