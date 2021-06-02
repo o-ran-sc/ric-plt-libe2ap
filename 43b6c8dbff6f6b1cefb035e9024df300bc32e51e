@@ -16,6 +16,24 @@
       "message": "Need to update log dir after merge of patch :https://gerrit.o-ran-sc.org/r/c/ric-plt/libe2ap/+/6195\n",
       "revId": "43b6c8dbff6f6b1cefb035e9024df300bc32e51e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0af053c2_418bf154",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000475
+      },
+      "writtenOn": "2021-06-02T10:20:49Z",
+      "side": 1,
+      "message": "\u003e Need to update log dir after merge of patch :https://gerrit.o-ran-sc.org/r/c/ric-plt/libe2ap/+/6195\n\u003e \n\nKindly ignore this comment, this comment should go to https://gerrit.o-ran-sc.org/r/c/ric-plt/libe2ap/+/6193",
+      "parentUuid": "666f7a7b_de4a5075",
+      "revId": "43b6c8dbff6f6b1cefb035e9024df300bc32e51e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
