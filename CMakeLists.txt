@@ -32,7 +32,7 @@ cmake_minimum_required( VERSION 3.5 )
 #	small tweaks and possibly corrections (omissions/inclusions etc.) as is needed.
 #
 set( major_version "1" )
-set( minor_version "0" )
+set( minor_version "1" )
 set( patch_level "0" )
 
 set( install_root "${CMAKE_INSTALL_PREFIX}" )
