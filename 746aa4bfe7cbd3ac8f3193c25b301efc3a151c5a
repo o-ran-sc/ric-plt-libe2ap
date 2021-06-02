@@ -102,6 +102,23 @@
       "message": "Patch Set 2: remerge",
       "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e904f268_22ac2dc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000475
+      },
+      "writtenOn": "2021-06-02T08:30:55Z",
+      "side": 1,
+      "message": "stage-release",
+      "revId": "746aa4bfe7cbd3ac8f3193c25b301efc3a151c5a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
