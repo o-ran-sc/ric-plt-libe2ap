@@ -34,10 +34,14 @@ repositories:
     - ric-plt/libe2ap
 committers:
     - <<: *oran_ric_plt_libe2ap_ptl
-    - name: 'Scott Daniels'
-      email: 'daniels@research.att.com'
-      company: 'research.att'
-      id: 'EScottDaniels'
+    - name: 'Naman Gupta'
+      email: 'naman.gupta@samsung.com'
+      company: 'samsung'
+      id: 'naman.gupta'
+    - name: 'Subhash Kumar Singh'
+      email: 'subh.singh@samsung.com'
+      company: 'samsung'
+      id: 'subhash_singh'
     - name: 'Shraboni Jana'
       email: 'sj492a@att.com'
       company: 'ATT'
@@ -52,6 +56,12 @@ tsc:
     # yamllint disable rule:line-length
     approval: 'https://wiki.o-ran-sc.org/pages/viewpage.action?pageId=1179656'
     changes:
-        - type: ''
-          name: ''
+        - type: 'Removal'
+          name: 'Scott Daniels'
+          link: ''
+        - type: 'Promotion'
+          name: 'Subhash Kumar Singh'
+          link: ''
+        - type: 'Promotion'
+          name: 'Naman Gupta'
           link: ''
