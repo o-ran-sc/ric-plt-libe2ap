@@ -1,0 +1,10 @@
+Code-Review+2: Thoralf Czichy <thoralf.czichy@nokia.com>
+Code-Review+2: Anssi Mannila <anssi.mannila@nokia.com>
+Code-Review+1: subhash kumar singh <subh.singh@samsung.com>
+Code-Review+1: Shraboni Jana <sj492a@att.com>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Thoralf Czichy <thoralf.czichy@nokia.com>
+Submitted-at: Fri, 06 Aug 2021 06:06:06 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ric-plt/libe2ap/+/6561
+Project: ric-plt/libe2ap
+Branch: refs/heads/master
